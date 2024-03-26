@@ -20,6 +20,6 @@ Problem Statement: Write a solution to find managers with at least five direct r
 
 SELECT e1.name
 FROM Employee e1
-LEFT JOIN Employee e2 ON e1.id = e2.managerId
-GROUP BY e1.id
-HAVING COUNT(e2.name) >= 5;
+JOIN Employee e2 ON e1.id = e2.managerId
+GROUP BY e2.managerId
+HAVING COUNT(e2.managerId) >= 5;
